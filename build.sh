@@ -25,7 +25,7 @@ fi
 # shellcheck source=config.sh
 source config.sh
 
-mkdir deps Release tmp 2>/dev/null || true
+mkdir deps release tmp 2>/dev/null || true
 
 info "fetching electron $ELECTRON_VERSION ..."
 if [[ ! -e "deps/electron-$ELECTRON_VERSION.zip" ]]; then
@@ -46,14 +46,14 @@ set -x
 7z x "deps/electron-$ELECTRON_VERSION.zip" -y -otmp/build >/dev/null
 7z x "deps/notion-$NOTION_VERSION.img" -y  -otmp/notion >/dev/null
 cp -r tmp/notion/Notion**/*.app/Contents/Resources/* tmp/build
-cp scripts/* tmp/build
+cp notion tmp/build
 
 # Skip compression
 if [[ "$1" != "--no-compress" ]]; then
-  7z a "Release/notion-$NOTION_VERSION.tar" tmp/build
-  xz "Release/notion-$NOTION_VERSION.tar"
+  7z a "release/notion-$NOTION_VERSION.tar" tmp/build
+  xz "release/notion-$NOTION_VERSION.tar"
 fi
 
 set +x
 
-info "built in 'Release/notion-$NOTION_VERSION.tar.xz'"
+info "built in 'release/notion-$NOTION_VERSION.tar.xz'"

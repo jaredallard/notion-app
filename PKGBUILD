@@ -8,24 +8,19 @@ arch=('i686' 'x86_64')
 url="http://github.com/jaredallard/notion-app"
 license=('MIT')
 depends=('pacman')
-makedepends=('wget', 'img2dmg', 'p7zip')
-source=("https://github.com/jaredallard/notion-app")
-md5sums=('SKIP')
+makedepends=('wget' 'dmg2img' 'p7zip' 'patch')
+source=('build.sh' 'config.sh' 'notion')
+md5sums=('SKIP' 'SKIP' 'SKIP')
 
 build() {
-  cd "$pkgname-$pkgver"
-
-  make
-  sed '/^$/q' src/cower.c >LICENSE
+  ./build.sh --no-compress
 }
 
 package() {
-  cd "$pkgname-$pkgver"
-
-  mkdir -p /opt/
-  cp -r tmp/build /opt/notion
-  cp tmp/build/notion /usr/bin/notion
-  chmod +x /usr/bin/notion
+  echo "$pkgdir"
+  mkdir -p "$pkgdir/usr/bin" "$pkgdir/opt/notion"
+  cp -r tmp/build/* "$pkgdir/opt/notion/"
+  install -D -m755 notion "$pkgdir/usr/bin/notion"
 }
 
 # vim: ft=sh syn=sh
