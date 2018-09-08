@@ -12,6 +12,12 @@ makedepends=('wget' 'dmg2img' 'p7zip' 'patch')
 source=('build.sh' 'config.sh' 'notion')
 md5sums=('SKIP' 'SKIP' 'SKIP')
 
+
+pkgver() {
+  source config.sh
+  echo $NOTION_VERSION
+}
+
 build() {
   ./build.sh --no-compress
 }

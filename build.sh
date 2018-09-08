@@ -50,7 +50,9 @@ cp notion tmp/build
 
 # Skip compression
 if [[ "$1" != "--no-compress" ]]; then
+  rm -rf release/*
   7z a "release/notion-$NOTION_VERSION.tar" tmp/build
+  7z rn "release/notion-$NOTION_VERSION.tar" tmp/build "notion-$NOTION_VERSION"
   xz "release/notion-$NOTION_VERSION.tar"
 fi
 
