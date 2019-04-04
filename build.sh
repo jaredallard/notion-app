@@ -53,7 +53,7 @@ if [[ "$1" != "--no-compress" ]]; then
   rm -rf release/*
   7z a "release/notion-$NOTION_VERSION.tar" tmp/build
   7z rn "release/notion-$NOTION_VERSION.tar" tmp/build "notion-$NOTION_VERSION"
-  xz "release/notion-$NOTION_VERSION.tar"
+  xz --threads=0 "release/notion-$NOTION_VERSION.tar"
 fi
 
 set +x
