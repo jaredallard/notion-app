@@ -28,6 +28,12 @@ ELECTRON_VERSION=x.x.x electron version to use
 NOTION_VERSION=x.x.x notion dmg to download
 ```
 
+## Installing
+
+After running the [Build](#building) step:
+
+Extract the built tar file into `/opt/notion` and then cp the `notion` shell script to `/usr/bin/notion`
+
 ## License
 
 MIT
