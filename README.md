@@ -12,6 +12,11 @@ The electron sources are pulled out of the Mac OSX dmg and then ran with a Linux
 
 ## Building
 
+Ensure you have the dependencies installed:
+
+ * 7zip (p7zip-full on ubuntu)
+ * dmg2img
+
 Run `./build.sh [--no-compress]`
 
 ## Customizing
