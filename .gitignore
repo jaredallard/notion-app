@@ -1,7 +1,7 @@
 deps
-Release
+release
 tmp
-src
 *.tar.xz
 *.tar
 pkg
+Notion.desktop

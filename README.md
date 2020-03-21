@@ -10,15 +10,6 @@ If you're on Arch Linux, there is a package in the AUR called `notion-app`.
 
 The electron sources are pulled out of the Mac OSX dmg and then ran with a Linux version of Electron, yeah, it's that easy.
 
-## Building
-
-Ensure you have the dependencies installed:
-
- * 7zip (p7zip-full on ubuntu)
- * dmg2img
-
-Run `./build.sh [--no-compress]`
-
 ## Customizing
 
 Modify `config.sh` before running `build.sh` or `makepkg -si`
@@ -30,9 +21,20 @@ NOTION_VERSION=x.x.x notion dmg to download
 
 ## Installing
 
-After running the [Build](#building) step:
+Ensure you have the dependencies installed:
 
-Extract the built tar file into `/opt/notion` and then cp the `notion` shell script to `/usr/bin/notion`
+ * 7zip (p7zip-full on ubuntu)
+ * dmg2img
+
+Run `sudo ./build.sh [--no-compress]`
+
+## Uninstalling
+ - Run `sudo ./uninstall.sh`
+
+Or manually:
+ - Delete the application `rm -rf /opt/notion`
+ - Delete desktop entry `rm -r ~/.local/share/applications/Notion.desktop`
+ - Delete `rm /usr/bin/notion`
 
 ## License
 
