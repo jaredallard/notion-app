@@ -59,3 +59,12 @@ fi
 set +x
 
 info "built in 'release/notion-$NOTION_VERSION.tar.xz'"
+
+tar xf "release/notion-$NOTION_VERSION.tar.xz" -C tmp
+cp Notion_app_logo.png "tmp/notion-$NOTION_VERSION"
+
+sudo mv "tmp/notion-$NOTION_VERSION" /opt/notion
+
+source create_shortcut.sh
+
+sudo cp notion /usr/bin/notion
