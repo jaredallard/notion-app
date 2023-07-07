@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#
-# Launch notion.so
+# Launches notion
 
 if [[ ! -e "/opt/notion" ]]; then
   echo "Error: /opt/notion not found"
