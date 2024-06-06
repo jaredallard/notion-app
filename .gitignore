@@ -5,3 +5,4 @@ tmp
 *.tar
 pkg
 Notion.desktop
+.DS_Store
