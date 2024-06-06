@@ -6,6 +6,5 @@ if [[ ! -e "/opt/notion" ]]; then
   exit 1
 fi
 
-pushd "/opt/notion" >/dev/null || exit 1
-./electron app.asar
-popd >/dev/null || exit 1
+cd /opt/notion || exit 1
+exec ./electron app.asar
