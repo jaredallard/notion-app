@@ -1,5 +1,9 @@
 # Notion for Linux
 
+> [!WARNING]
+> This repository has been archived. See the alternatives for other
+> solutions.
+
 This is a meta repo that contains scripts/stuff needed to build Notion for Linux
 
 ## Alternatives (based on this repo)
